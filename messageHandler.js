@@ -1,4 +1,5 @@
 const { AttachmentBuilder } = require("discord.js");
+const { handleMemeCommand } = require("./memeHandler");
 
 const monitoredChannelId = "1275732476408500255";
 const adminRoleId = "1275712561282547763";
@@ -93,6 +94,9 @@ const handleMessages = async (message) => {
       setTimeout(() => tempMessage.delete(), 5000);
     }
   }
+
+  // HANDLE MEME COMMAND
+  handleMemeCommand(message);
 };
 
 module.exports = { handleMessages };
