@@ -76,7 +76,7 @@ const handleMessages = async (message) => {
     deleteCount = Math.min(parseInt(deleteCount), 99);
 
     const confirmation = await ask(
-      `sure ka buburahin mo ${deleteCount} na mensahe? \n 1 : yes \n 2 : no`,
+      `sigurado ka buburahin mo ${deleteCount} na mensahe? \n 1 : yes \n 2 : no`,
       (m) => ["1", "2"].includes(m.content) && filterByUser(m),
     );
 
