@@ -42,7 +42,7 @@ const handleMessages = async (message) => {
 
   if (/zombie/i.test(message.content)) {
     message.channel.send(
-      "```" + "\nleft4dead reference? dying light?" + "\n```",
+      "```" + "\nleft4dead reference? dying light????" + "\n```",
     );
   }
 
