@@ -50,7 +50,7 @@ const handleMessages = async (message) => {
   if (/kuya/i.test(message.content)) {
     const attachment = new AttachmentBuilder("boomer.png");
     message.channel.send({
-      content: "```" + "\nmabini homesite malapit sa dona adela (:" + "\n```",
+      content: "```" + "\nleft 4 dead 2 (:" + "\n```",
       files: [attachment],
     });
   }

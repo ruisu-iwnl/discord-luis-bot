@@ -22,7 +22,7 @@ const handleMemeCommand = async (message) => {
         message.channel.send("Sorry, I couldn't fetch a meme at the moment.");
       }
     } else {
-      message.channel.send("bawal d2. punta k meme-bot channel/");
+      message.channel.send("bawal d2. punta k meme-bot channel");
     }
   }
 };
