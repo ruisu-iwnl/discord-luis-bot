@@ -1,7 +1,9 @@
 const axios = require("axios");
 
-const memeApiUrl = "https://meme-api.com/gimme";
-const allowedChannelId = "1276620142238765188"; 
+const subreddit = "shitposting";
+const memeApiUrl = `https://meme-api.com/gimme/${subreddit}`;
+const allowedChannelId = "1276620142238765188";
+
 const fetchRandomMeme = async () => {
   try {
     const response = await axios.get(memeApiUrl);
@@ -13,8 +15,8 @@ const fetchRandomMeme = async () => {
 };
 
 const handleMemeCommand = async (message) => {
-  if (message.content.toLowerCase() === "meme") {
-    if (message.channel.id === allowedChannelId) {
+  if (message.channel.id === allowedChannelId) {
+    if (message.content.toLowerCase() === "meme") {
       const memeUrl = await fetchRandomMeme();
       if (memeUrl) {
         message.channel.send(memeUrl);
@@ -22,7 +24,29 @@ const handleMemeCommand = async (message) => {
         message.channel.send("Sorry, I couldn't fetch a meme at the moment.");
       }
     } else {
-      message.channel.send("bawal d2. punta k meme-bot channel");
+      await message.delete();
+
+      try {
+        const responseMessage = await message.channel.send(
+          "```\nOnly 'meme' is allowed in this channel.\n```"
+        );
+
+        setTimeout(() => responseMessage.delete().catch(console.error), 60000);
+      } catch (error) {
+        console.error("Error sending response message:", error);
+      }
+    }
+  } else {
+    await message.delete();
+
+    try {
+      const warningMessage = await message.channel.send(
+        "Please use the 'meme' command in the #meme-bot channel."
+      );
+
+      setTimeout(() => warningMessage.delete().catch(console.error), 60000);
+    } catch (error) {
+      console.error("Error sending warning message:", error);
     }
   }
 };
