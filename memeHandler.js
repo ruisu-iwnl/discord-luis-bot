@@ -25,25 +25,21 @@ const handleMemeCommand = async (message) => {
       }
     } else {
       await message.delete();
-
       try {
         const responseMessage = await message.channel.send(
           "```\nOnly 'meme' is allowed in this channel.\n```"
         );
-
         setTimeout(() => responseMessage.delete().catch(console.error), 60000);
       } catch (error) {
         console.error("Error sending response message:", error);
       }
     }
-  } else {
+  } else if (message.content.toLowerCase() === "meme") {
     await message.delete();
-
     try {
       const warningMessage = await message.channel.send(
         "Please use the 'meme' command in the #meme-bot channel."
       );
-
       setTimeout(() => warningMessage.delete().catch(console.error), 60000);
     } catch (error) {
       console.error("Error sending warning message:", error);
