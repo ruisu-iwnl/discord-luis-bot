@@ -28,7 +28,7 @@ const handleMessages = async (message) => {
         "\nHello! I am bot luis. Ginawa ako para manggago. Maraming Salamat! :D" +
         "\nhttps://github.com/ruisu-iwnl" +
         "\n----------------------------------------------------" +
-        "\nFunny Commands:\n\nchino - Displays magic word\nzombie - Displays summoning word" +
+        "\nFunny Commands:\n\nchino - Displays magic word\nzombie - Displays summoning word\nmeme - Displays random meme" +
         "\n----------------------------------------------------" +
         "\n!!!USEFUL Commands:\n\nhelp po - Displays this message'\npakilinis po - clears the last 10 messages" +
         "\n----------------------------------------------------" +
